@@ -68,18 +68,18 @@ class MemberServiceImplTest {
         assertEquals(memberDTO, result);
     }
 
-//    @Test
-//    @DisplayName("회원가입 실패 - 이메일 중복")
-//    void 회원가입_실패_이메일중복() {
-//        // Given
-//        String email = "test@example.com";
-//        String rawPassword = "password";
-//        MemberRegisterRequestDto request = new MemberRegisterRequestDto(email, new RawPassword(rawPassword));
-//
-//        when(memberRepository.existsByEmail(email)).thenReturn(true);
-//
-//        // When & Then
-//        BusinessException exception = assertThrows(BusinessException.class, () -> memberService.createMember(request));
-//        assertEquals(ErrorCode.EMAIL_ALREADY_EXISTS, exception.getErrorCode());
-//    }
+    @Test
+    @DisplayName("회원가입 실패 - 이메일 중복")
+    void 회원가입_실패_이메일중복() {
+        // Given
+        String email = "test@example.com";
+        String rawPassword = "password";
+        MemberRegisterRequestDto request = new MemberRegisterRequestDto(email, new RawPassword(rawPassword));
+
+        when(memberRepository.existsByEmail(email)).thenReturn(true);
+
+        // When & Then
+        BusinessException exception = assertThrows(BusinessException.class, () -> memberService.createMember(request));
+        assertEquals(ErrorCode.EMAIL_ALREADY_EXISTS, exception.getErrorCode());
+    }
 }

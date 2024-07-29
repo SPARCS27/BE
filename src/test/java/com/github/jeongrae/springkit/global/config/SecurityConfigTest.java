@@ -147,18 +147,18 @@ class SecurityConfigTest {
                 .andExpect(unauthenticated());
     }
 
-    @Test
-    @DisplayName("중복 회원가입 실패")
-    public void 중복_회원가입_실패() throws Exception {
-        String username = "correct";
-        String password = "correct";
-
-        mockMvc.perform(
-                        formLogin("/login")
-                                .user(username)
-                                .password(password))
-                .andDo(print())
-                .andExpect(unauthenticated());
-    }
+//    @Test
+//    @DisplayName("중복 회원가입 실패")
+//    public void 중복_회원가입_실패() throws Exception {
+//        String username = "correct";
+//        String password = "correct";
+//
+//        mockMvc.perform(
+//                        formLogin("/login")
+//                                .user(username)
+//                                .password(password))
+//                .andDo(print())
+//                .andExpect(unauthenticated());
+//    }
 
 }
