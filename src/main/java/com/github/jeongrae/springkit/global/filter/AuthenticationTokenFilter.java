@@ -31,8 +31,21 @@ public class AuthenticationTokenFilter extends OncePerRequestFilter {
 
     private final Logger LOGGER = LoggerFactory.getLogger(AuthenticationTokenFilter.class);
 
-    @Value("${host.develop.api.ant-match.uri}")
-    private List<String> antMatchURIs = new ArrayList<>();
+    private static final List<String> antMatchURIs = List.of(
+            "/css",
+            "/js",
+            "/html",
+            "/icon",
+            "/api/auth",
+            "/swagger-ui",
+            "/v3",
+            "/favicon.ico",
+            "/login",
+            "/home",
+            "/index",
+            "/index.js",
+            "/api/member/register"
+    );
 
 
     @Override
