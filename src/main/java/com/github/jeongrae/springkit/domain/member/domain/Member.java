@@ -12,7 +12,7 @@ import lombok.ToString;
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter @ToString(exclude = {"password"})
+@Getter @ToString(exclude = {"encodedPassword"})
 @Table
 @Entity
 public class Member extends BaseTimeEntity {
